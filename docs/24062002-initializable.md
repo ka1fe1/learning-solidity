@@ -1,5 +1,8 @@
 # Initializable
 
+- [Initializable](#initializable)
+
+
 OpenZeppelin 提供了 Initializable 库合约，该合约的功能是实现通用可升级代理合约，所有需要设计可升级的合约只需要继承 Initialzable 合约即可。
 
 该合约的使用要点为:
