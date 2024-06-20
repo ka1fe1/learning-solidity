@@ -1,3 +1,10 @@
+- [delegateCall](#delegatecall)
+  - [call \& delegateCall](#call--delegatecall)
+    - [call](#call)
+    - [delegateCall](#delegatecall-1)
+    - [delegateCall 应用场景](#delegatecall-应用场景)
+
+
 # delegateCall
 
 ## call & delegateCall
