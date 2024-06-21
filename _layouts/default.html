@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
 
+    <link rel="stylesheet" type="text/css" href="./go-to-top.css">
+    
+
   </head>
   <body>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
@@ -30,6 +33,12 @@
     </header>
 
     <main id="content" class="main-content" role="main">
+      <div class="goTop">
+        <a href="#" class="goTopBtn jq-goTop">
+          <i class="fas fa-arrow-alt-circle-up fa-3x"></i>
+        </a>
+      </div>
+
       {{ content }}
 
       <footer class="site-footer">
@@ -46,6 +55,16 @@
     mermaid.initialize({ startOnLoad: false });
     await mermaid.run({
       querySelector: '.language-mermaid',
+    });
+
+    $(".jq-goTop").click(function (e) {
+      e.preventDefault();
+      $("html,body").animate(
+        { 
+          scrollTop: 0,
+        },
+        600
+      );
     });
   </script>
 </html>

@@ -1,0 +1,14 @@
+.goTop {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    .goTopBtn {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      .fa-arrow-alt-circle-up {
+        color: #3d82ad;
+      }
+    }
+}
