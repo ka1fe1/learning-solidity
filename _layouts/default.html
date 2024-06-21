@@ -41,7 +41,7 @@
       <i class="fas fa-arrow-alt-circle-up fa-3x"></i>
     </a>
   </div>
-  
+
   <main id="content" class="main-content" role="main">
 
     {{ content }}
@@ -58,21 +58,8 @@
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.0.2/+esm';
-  mermaid.initialize({ startOnLoad: false });
-  await mermaid.run({
-    querySelector: '.language-mermaid',
-  });
-
+<script type="text/javascript">
   $(function () {
-    // close效果
-    $(".jq-adClose").click(function (event) {
-      /* Act on the event */
-      event.preventDefault();
-      $(".adBox").fadeOut();
-    });
-
     $(window).scroll(function () {
       if ($(window).scrollTop() > 200) {
         if ($(".goTop").hasClass("hide")) {
@@ -82,18 +69,13 @@
         $(".goTop").addClass("hide");
       }
     });
-
-    $(".jq-goTop").click(function (e) {
-      e.preventDefault();
-      $("html,body").animate(
-        {
-          scrollTop: 0
-        },
-        600
-      );
+</script>
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.0.2/+esm';
+    mermaid.initialize({ startOnLoad: false });
+    await mermaid.run({
+      querySelector: '.language-mermaid',
     });
-  });
-
 </script>
 
 </html>
