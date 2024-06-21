@@ -2,6 +2,13 @@
     position: fixed;
     right: 10px;
     bottom: 10px;
+    /* 圖示水平移動位置 */
+    transform: translateX(0);
+    transition: transform 0.2s;
+    /* 圖示隱藏 */
+    &.hide {
+      transform: translateX(120%);
+    } 
     .goTopBtn {
       background-color: transparent;
       border: none;
@@ -12,3 +19,4 @@
       }
     }
 }
+
