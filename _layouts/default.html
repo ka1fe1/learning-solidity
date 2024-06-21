@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
   </head>
   <body>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
@@ -42,16 +41,11 @@
     </main>
   </body>
 
-  <script>
-    var config = {
-      startOnLoad:true,
-      theme: 'forest',
-      flowchart:{
-        useMaxWidth:false,
-        htmlLabels:true
-      }
-    };
-    mermaid.initialize(config);
-    window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.0.2/+esm';
+    mermaid.initialize({ startOnLoad: false });
+    await mermaid.run({
+      querySelector: '.language-mermaid',
+    });
   </script>
 </html>
