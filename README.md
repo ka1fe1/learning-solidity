@@ -5,3 +5,4 @@ learning solidity
 - [24062001-contract_upgrade.md](./docs/24062001-contract_upgrade.md)
 - [24062002-initializable.md](./docs/24062002-initializable.md)
 - [24062003-ownable.md](./docs/24062003-ownable.md)
+- [24062101-payable.md](./docs/24062101-payable.md)
