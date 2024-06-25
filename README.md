@@ -11,6 +11,7 @@
 - [24062002-initializable.md](./docs/24062002-initializable.md)
 - [24062003-ownable.md](./docs/24062003-ownable.md)
 - [24062101-payable.md](./docs/24062101-payable.md)
+- [24062501-variable_function.md](./docs/24062501-variable_function.md)
 
 
 ## 其他相关知识
