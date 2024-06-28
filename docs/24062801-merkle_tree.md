@@ -5,6 +5,7 @@
   - [为什么要使用 merkle tree](#为什么要使用-merkle-tree)
   - [如何使用 merkle tree](#如何使用-merkle-tree)
   - [merkle tree 的应用](#merkle-tree-的应用)
+  - [Ref](#ref)
 
 ## 什么是 merkle tree
 
@@ -57,4 +58,9 @@ merkle tree 能够利用 merkle proof 实现验证某个元素是否在某个庞
 2. 比较两个集合是否相同: 只需比较两个集合生成的 merkle tree 的 root 值是否相同
 3. 快速定位集合中，哪些元素被修改了
 4. 零知识证明: 不需要给出完整集合数据，只需要根据某个叶子节点及其 proof 值，便可验证节点是否存在集合中
+
+## Ref
+
+- [MerkleTree](https://www.wtf.academy/docs/solidity-103/MerkleTree/)
+- [MerkleTree-02](https://yeasy.gitbook.io/blockchain_guide/05_crypto/merkle_trie)
 
