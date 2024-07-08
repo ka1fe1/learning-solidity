@@ -6,7 +6,7 @@
     - [call](#call)
     - [delegateCall](#delegatecall)
     - [summary](#summary)
-  - [Contract Create\&Destory](#contract-createdestory)
+  - [Contract Create And Destory](#contract-create-and-destory)
     - [create contratc](#create-contratc)
       - [create](#create)
       - [create2](#create2)
@@ -14,13 +14,13 @@
         - [why need create2](#why-need-create2)
         - [how to use create2](#how-to-use-create2)
     - [destory contract](#destory-contract)
-  - [abi encode\&decode](#abi-encodedecode)
+  - [ABI Encode And Decode](#abi-encode-and-decode)
     - [what is ABI](#what-is-abi)
     - [ABI encode](#abi-encode)
     - [ABI decode](#abi-decode)
   - [Hash](#hash)
-    - [keccak256 \& sha3](#keccak256--sha3)
-  - [try-catch](#try-catch)
+    - [keccak256 and sha3](#keccak256-and-sha3)
+  - [Try-Catch](#try-catch)
 
 
 ## Call Contract
@@ -62,7 +62,7 @@ deleteCall 的调用方式如下：
 | call | 不知道合约与源码及 ABI | `contractAddr.call(abi.encodeWithSignature("函数名(逗号分隔的参数类型)", 逗号分隔的参数))` |
 | delegateCall | 不知道合约与源码及 ABI | `contractAddr.delegateCall(abi.encodeWithSignature("函数名(逗号分隔的参数类型)", 逗号分隔的参数))` |
 
-## Contract Create&Destory
+## Contract Create And Destory
 
 ### create contratc
 
@@ -107,7 +107,7 @@ create2 创建合约语法如下:
 
 ### destory contract
 
-## abi encode&decode
+## ABI Encode And Decode
 
 ### what is ABI
 
@@ -140,13 +140,13 @@ solidity 中常用的哈希函数是 `keccak256`，其用法如下:
     hash = keccak256(数据)
 ```
 
-### keccak256 & sha3
+### keccak256 and sha3
 
 `keccak256` 与 `sha3` 的区别和联系：
 - 联系: `sha3` 由 `keccak256` 标准化而来，很多场景可以同义
 - 区别: 在 `sha3` 标准化完成时，更改了其内部算法，导致最终结果与 `keccak256` 不一致；以太坊在 `sha3` 标准化之前开发出来，所以以太坊的哈希函数是 `keccak256`
 
-## try-catch
+## Try-Catch
 
 在 solidity 中 try catch 语法，只能用于外部函数或创建合约时 construct 的调用。基本语法如下
 
