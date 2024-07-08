@@ -1,31 +1,31 @@
 # Contract Basics
 
 - [Contract Basics](#contract-basics)
-  - [调用合约](#调用合约)
-    - [生成合约变量](#生成合约变量)
+  - [Call Contract](#call-contract)
+    - [generate contract var](#generate-contract-var)
     - [call](#call)
     - [delegateCall](#delegatecall)
-    - [总结](#总结)
-  - [合约的创建与删除](#合约的创建与删除)
-    - [创建合约](#创建合约)
+    - [summary](#summary)
+  - [Contract Create\&Destory](#contract-createdestory)
+    - [create contratc](#create-contratc)
       - [create](#create)
       - [create2](#create2)
         - [what is create2](#what-is-create2)
         - [why need create2](#why-need-create2)
         - [how to use create2](#how-to-use-create2)
-    - [删除合约](#删除合约)
-  - [ABI 编码与解码](#abi-编码与解码)
+    - [destory contract](#destory-contract)
+  - [abi encode\&decode](#abi-encodedecode)
     - [what is ABI](#what-is-abi)
-    - [ABI 编码方法](#abi-编码方法)
-    - [ABI 解码方法](#abi-解码方法)
-  - [哈希函数](#哈希函数)
-    - [keccak256 与 sha3](#keccak256-与-sha3)
+    - [ABI encode](#abi-encode)
+    - [ABI decode](#abi-decode)
+  - [Hash](#hash)
+    - [keccak256 \& sha3](#keccak256--sha3)
   - [try-catch](#try-catch)
 
 
-## 调用合约
+## Call Contract
 
-### 生成合约变量
+### generate contract var
 
 在已知被调用合约的源码(接口)和地址的情况下，可以采取生成合约变量的方式来调用已部署的合约，有以下方式可用用来生成合约变量:
 
@@ -54,7 +54,7 @@ deleteCall 的调用方式如下：
 
 关系 `call` 与 `delegateCall` 的区别详见: [./24061701-delegate_call.md](./24061701-delegate_call.md)
 
-### 总结
+### summary
 
 | 调用合约的方式 | 适应场景 | 语法 |
 | --- | --- | --- |
@@ -62,9 +62,9 @@ deleteCall 的调用方式如下：
 | call | 不知道合约与源码及 ABI | `contractAddr.call(abi.encodeWithSignature("函数名(逗号分隔的参数类型)", 逗号分隔的参数))` |
 | delegateCall | 不知道合约与源码及 ABI | `contractAddr.delegateCall(abi.encodeWithSignature("函数名(逗号分隔的参数类型)", 逗号分隔的参数))` |
 
-## 合约的创建与删除
+## Contract Create&Destory
 
-### 创建合约
+### create contratc
 
 #### create
 
@@ -105,15 +105,15 @@ create2 创建合约语法如下:
 - `value`: 如果创建的合约时 `payable` 的，则允许创建时向其转账
 - `params`: 新合约构造函数的参数
 
-### 删除合约
+### destory contract
 
-## ABI 编码与解码
+## abi encode&decode
 
 ### what is ABI
 
 `ABI`: application binary interface, 应用程序二进制接口，是与合约交互的标准。其数据也是通过了该类型进行编码，由于编码时只包含了数据，在解码时，要申明返回值的类型
 
-### ABI 编码方法
+### ABI encode
 
 | 方法名 | 备注  |
 | --- | ---  |
@@ -122,7 +122,7 @@ create2 创建合约语法如下:
 | `abi.encideWithSignature()` | <li> 功能: 与 `abi.encode` 功能类似，只不过第一个参数为函数签名(functionName(逗号分隔的参数类型)) <li> 使用场景: 在合约中调用其他合约时使用 |
 | `abi.encodeWithSelector()` | <li> 功能: 与 `abi.encodeWithSelector` 类似，只不过第一个参数为函数选择器(bytes4(keccak256(functionName(逗号分隔的参数类型)))) <li> 使用场景: 调用其他合约时使用，其编码结果与 `abi.encideWithSignature()` 完全一致 |
 
-### ABI 解码方法
+### ABI decode
 
 `abi.decode` 用于解码 `abi.encode` 编码的二进制数据，将它还原成原本的参数，用法如下:
 
@@ -132,7 +132,7 @@ function decode(bytes memory data) public pure returns(uint dx, address daddr, s
 }
 ```
 
-## 哈希函数
+## Hash
 
 solidity 中常用的哈希函数是 `keccak256`，其用法如下:
 
@@ -140,7 +140,7 @@ solidity 中常用的哈希函数是 `keccak256`，其用法如下:
     hash = keccak256(数据)
 ```
 
-### keccak256 与 sha3
+### keccak256 & sha3
 
 `keccak256` 与 `sha3` 的区别和联系：
 - 联系: `sha3` 由 `keccak256` 标准化而来，很多场景可以同义
